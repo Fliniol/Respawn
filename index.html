@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respawn — Portal de Jogos, Catálogo e Comunidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#topo" class="logo">Respawn</a>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar matéria ou jogo…">
+      </div>
+
+      
+      <div id="authButtons" class="auth-buttons">
+        <button type="button" class="btn btn-outline btn-sm" id="btnAbrirLogin">Entrar</button>
+        <button type="button" class="btn btn-primary btn-sm" id="btnAbrirCadastro">Criar Conta</button>
+      </div>
+
+      
+      <div id="userMenu" class="user-menu" hidden>
+        <button type="button" class="user-chip" id="btnAbrirPerfil" title="Abrir Perfil e Configurações">
+          <img id="headerAvatar" src="" alt="Avatar">
+          <span id="headerUserName">Jogador</span>
+        </button>
+        <button type="button" class="btn btn-outline btn-sm" id="btnSair">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="navigation-bar">
+    <nav class="main-nav wrap" id="mainNav" aria-label="Navegação principal">
+      <a href="#feedSection" data-nav-filtro="todas" class="nav-link is-active">Notícias</a>
+      <a href="#melhoresSection" class="nav-link">Melhores</a>
+      <a href="#catalogoSection" class="nav-link">Catálogo</a>
+      <a href="#analises" class="nav-link">Análises</a>
+      <a href="#contatoSection" class="nav-link">Contato</a>
+    </nav>
+  </div>
+</div>
+</header>
+
+<main id="topo">
+
+  
+  <section class="hero" id="heroSection"></section>
+
+  
+  <section class="melhores-section" id="melhoresSection">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Mais lidas</span>
+          <h2>Melhores Notícias</h2>
+        </div>
+        <p class="section-sub">As matérias mais curtidas e debatidas pelos leitores do Respawn.</p>
+      </div>
+      <div class="melhores-grid" id="melhoresGrid"></div>
+    </div>
+  </section>
+
+  
+  <section class="feed" id="feedSection">
+    <div class="wrap">
+      <div class="feed-head">
+        <div>
+          <span class="section-kicker">Últimas publicações</span>
+          <h2>Notícias Novas</h2>
+        </div>
+        <div class="feed-filtros" id="feedFiltros">
+          <button class="filtro-btn is-active" data-filtro="todas">Tudo</button>
+          <button class="filtro-btn" data-filtro="noticia">Notícias</button>
+          <button class="filtro-btn" data-filtro="guia">Guias</button>
+          <button class="filtro-btn" data-filtro="lancamento">Lançamentos</button>
+        </div>
+      </div>
+      <div class="feed-grid" id="feedGrid"></div>
+      <p class="feed-empty" id="feedEmpty" hidden>Nenhuma matéria encontrada com esse filtro.</p>
+    </div>
+  </section>
+
+  
+  <section class="catalogo-section" id="catalogoSection">
+    <div class="wrap">
+      <div class="feed-head">
+        <div>
+          <span class="section-kicker">Explore por plataforma</span>
+          <h2>Catálogo de Jogos</h2>
+        </div>
+        <div class="feed-filtros" id="catalogoFiltros">
+          <button class="filtro-btn is-active" data-plat="todas">Todas Plataformas</button>
+          <button class="filtro-btn" data-plat="PC">PC</button>
+          <button class="filtro-btn" data-plat="PS5">PS5</button>
+          <button class="filtro-btn" data-plat="Xbox">Xbox</button>
+          <button class="filtro-btn" data-plat="Switch">Switch</button>
+        </div>
+      </div>
+      <div class="catalogo-grid" id="catalogoGrid"></div>
+    </div>
+  </section>
+
+  
+  <section id="analises" class="analises">
+    <div class="wrap">
+      <h2>Análises da semana</h2>
+      <div class="analises-list" id="analisesList"></div>
+    </div>
+  </section>
+
+  
+  <section class="newsletter">
+    <div class="wrap newsletter-inner">
+      <div>
+        <h2>Direto no seu e-mail</h2>
+        <p>Um resumo por semana. Sem spam, sem clickbait duplicado.</p>
+      </div>
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" placeholder="seu@email.com" required id="newsletterEmail">
+        <button type="submit" class="btn btn-primary">Assinar</button>
+      </form>
+    </div>
+  </section>
+
+  
+  <section class="institucional-section" id="contatoSection">
+    <div class="wrap institucional-grid">
+      <div class="sobre-box" id="sobreSection">
+        <span class="section-kicker">Sobre o projeto</span>
+        <h2>Sobre o Portal</h2>
+        <p>
+          O <strong>Respawn</strong> é um projeto sobre videogames. A proposta é reunir notícias, guias, análises e informações sobre jogos em um só lugar.
+        </p>
+        <p>
+          A ideia é abrir espaço para a comunidade comentar as matérias, sugerir assuntos e compartilhar opiniões sobre os jogos.
+        </p>
+        <div class="sobre-stats">
+          <div>
+            <strong>Games</strong>
+            <span>Nosso assunto</span>
+          </div>
+          <div>
+            <strong>Comunidade</strong>
+            <span>Espaço para opiniões</span>
+          </div>
+          <div>
+            <strong>Respawn</strong>
+            <span>Em desenvolvimento</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contato-box">
+        <span class="section-kicker">Fale Conosco</span>
+        <h2>Entre em contato</h2>
+        <form id="contatoForm" class="stack-form">
+          <input type="text" id="contatoNome" placeholder="Seu nome" required>
+          <input type="email" id="contatoEmail" placeholder="Seu e-mail" required>
+          <select id="contatoAssunto">
+            <option value="Pauta / Sugestão">Sugestão de pauta</option>
+            <option value="Parceria / Imprensa">Imprensa e envio de keys</option>
+            <option value="Suporte / Conta">Suporte de conta e privacidade</option>
+          </select>
+          <textarea id="contatoMensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-logo">Respawn</p>
+      <p class="footer-note">Um espaço para acompanhar lançamentos, descobrir jogos e conversar sobre videogames.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Navegação</h3>
+      <a href="#feedSection">Notícias Novas</a>
+      <a href="#melhoresSection">Melhores Notícias</a>
+      <a href="#catalogoSection">Catálogo de Jogos</a>
+      <a href="#analises">Análises</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Institucional</h3>
+      <a href="#sobreSection">Sobre Nós</a>
+      <a href="#contatoSection">Contato</a>
+      <button type="button" class="footer-link-btn" data-legal="lgpd">Política de Privacidade (LGPD)</button>
+      <button type="button" class="footer-link-btn" data-legal="termos">Termos de Uso</button>
+    </div>
+
+    <div class="footer-col">
+      <h3>Privacidade & Direitos</h3>
+      <p class="footer-note">Projeto em desenvolvimento. Antes de publicar, a política de privacidade e os recursos de conta precisam ser conectados a um serviço seguro.</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Respawn Mídia Independente. Todos os direitos reservados.</span>
+    <button type="button" class="footer-link-btn" id="btnReabrirCookies">Preferências de Cookies</button>
+  </div>
+</footer>
+
+
+<div class="modal-backdrop" id="modalArtigo" hidden>
+  <div class="modal-card modal-lg" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close="modalArtigo" aria-label="Fechar">✕</button>
+    <div id="artigoDetalhe"></div>
+
+    <div class="comentarios-area">
+      <h3>Comentários da Comunidade (<span id="comentariosCount">0</span>)</h3>
+
+      <form id="comentarioForm" class="comentario-form">
+        <textarea id="comentarioTexto" rows="3" placeholder="Participe da discussão sobre esta matéria..." required></textarea>
+        <div class="comentario-form-footer">
+          <span id="comentarioAutorInfo" class="texto-dim"></span>
+          <button type="submit" class="btn btn-primary btn-sm">Publicar Comentário</button>
+        </div>
+      </form>
+
+      <div id="comentariosLista" class="comentarios-lista"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-backdrop" id="modalAuth" hidden>
+  <div class="modal-card modal-sm" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close="modalAuth" aria-label="Fechar">✕</button>
+
+    
+    <form id="formLogin" class="stack-form">
+      <h2>Bem-vindo de volta</h2>
+      <p class="texto-dim">Entre com seu e-mail e senha cadastrados.</p>
+      <label class="field-label" for="loginEmail">E-mail
+        <input type="email" id="loginEmail" placeholder="voce@exemplo.com" autocomplete="email" required>
+      </label>
+      <label class="field-label" for="loginSenha">Senha
+        <input type="password" id="loginSenha" placeholder="Sua senha" autocomplete="current-password" required>
+      </label>
+      <button type="submit" class="btn btn-primary">Entrar na Conta</button>
+    </form>
+
+    
+    <form id="formCadastro" class="stack-form" hidden>
+      <h2>Criar sua conta</h2>
+      <p class="texto-dim">Preencha os dados abaixo para participar da comunidade.</p>
+      <label class="field-label" for="cadNome">Nome de usuário
+        <input type="text" id="cadNome" placeholder="Ex.: jogador123" minlength="2" maxlength="40" autocomplete="nickname" aria-describedby="cadNomeDica" required>
+        <small class="field-hint" id="cadNomeDica">Esse nome ficará visível no perfil e nos comentários. Pode ter espaços e números; escolha algo fácil de reconhecer (2 a 40 caracteres).</small>
+      </label>
+      <label class="field-label" for="cadEmail">E-mail
+        <input type="email" id="cadEmail" placeholder="voce@exemplo.com" autocomplete="email" inputmode="email" aria-describedby="cadEmailDica" required>
+        <small class="field-hint" id="cadEmailDica">Use um e-mail válido e que você consiga acessar. Enviaremos uma mensagem para confirmar seu cadastro.</small>
+      </label>
+      <label class="field-label" for="cadSenha">Senha
+        <input type="password" id="cadSenha" placeholder="Pelo menos 8 caracteres" minlength="8" autocomplete="new-password" aria-describedby="cadSenhaDica" required>
+        <small class="field-hint" id="cadSenhaDica">Use no mínimo 8 caracteres. Uma combinação de palavras, números e símbolos é mais difícil de adivinhar. Não use a senha de outros serviços.</small>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="cadLgpd" required>
+        <span>Li e concordo com a Política de Privacidade (LGPD) e Termos de Uso.</span>
+      </label>
+      <button type="submit" class="btn btn-primary">Concluir Cadastro</button>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal-backdrop" id="modalPerfil" hidden>
+  <div class="modal-card modal-md" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close="modalPerfil" aria-label="Fechar">✕</button>
+
+    <div class="perfil-header">
+      <img id="perfilAvatarPreview" src="" alt="Foto de Perfil" class="perfil-avatar-lg">
+      <div>
+        <span class="section-kicker">Perfil do Leitor</span>
+        <h2 id="perfilTituloNome">Nome do Usuário</h2>
+        <p id="perfilEmailTexto" class="texto-dim">email@exemplo.com</p>
+        <p id="perfilBioTexto" class="perfil-bio-display"></p>
+      </div>
+    </div>
+
+    <div class="perfil-tabs">
+      <button type="button" class="auth-tab is-active" data-perfil-tab="visao">Resumo</button>
+      <button type="button" class="auth-tab" data-perfil-tab="config">Configurações</button>
+      <button type="button" class="auth-tab" data-perfil-tab="seguranca">Conta & LGPD</button>
+    </div>
+
+    
+    <div id="abaVisao" class="perfil-aba">
+      <div class="perfil-stats">
+        <div class="stat-card">
+          <strong id="statComentarios">0</strong>
+          <span>Comentários feitos</span>
+        </div>
+        <div class="stat-card">
+          <strong id="statCurtidas">0</strong>
+          <span>Notícias curtidas</span>
+        </div>
+        <div class="stat-card">
+          <strong id="statPlataforma">PC</strong>
+          <span>Plataforma favorita</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <form id="formConfigPerfil" class="stack-form perfil-aba" hidden>
+      <label class="field-label">Nome de Exibição
+        <input type="text" id="cfgNome" minlength="2" maxlength="40" required>
+      </label>
+      <label class="field-label">Bio / Tag de Jogador
+        <input type="text" id="cfgBio" placeholder="Ex: Fã de RPG tático e FPS competitivo">
+      </label>
+      <label class="field-label">Plataforma Principal
+        <select id="cfgPlataforma">
+          <option value="PC">PC</option>
+          <option value="PS5">PlayStation 5</option>
+          <option value="Xbox">Xbox Series</option>
+          <option value="Switch">Nintendo Switch</option>
+          <option value="Mobile">Mobile</option>
+        </select>
+      </label>
+      <label class="field-label">Escolher Avatar
+        <select id="cfgAvatar">
+          <option value="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80">Avatar Cyberpunk</option>
+          <option value="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80">Avatar Clássico</option>
+          <option value="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=200&q=80">Avatar Pro-Player</option>
+          <option value="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80">Avatar Streamer</option>
+        </select>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="cfgNewsletter">
+        <span>Receber resumo semanal de notícias por e-mail</span>
+      </label>
+      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </form>
+
+    
+    <div id="abaSeguranca" class="perfil-aba stack-form" hidden>
+      <form id="formAlterarSenha" class="stack-form">
+        <h3>Alterar Senha</h3>
+        <input type="password" id="novaSenha" placeholder="Nova senha (mín. 8 caracteres)" minlength="8" required>
+        <button type="submit" class="btn btn-outline">Atualizar Senha</button>
+      </form>
+
+      <div class="danger-zone">
+        <h3>Zona de Exclusão (Direito ao Esquecimento - LGPD)</h3>
+        <p>Ao excluir sua conta, o perfil, os comentários e as curtidas associados serão removidos do banco de dados.</p>
+        <button type="button" class="btn btn-danger" id="btnDeletarConta">Deletar Minha Conta Permanentemente</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-backdrop" id="modalLegal" hidden>
+  <div class="modal-card modal-md" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close="modalLegal" aria-label="Fechar">✕</button>
+    <div id="legalConteudo"></div>
+  </div>
+</div>
+
+
+<div class="lgpd-banner" id="lgpdBanner" hidden>
+  <div class="wrap lgpd-inner">
+    <p>
+      <strong>Privacidade e LGPD:</strong> Esta versão de demonstração usa o armazenamento do navegador. Os dados não são sincronizados entre dispositivos.
+    </p>
+    <div class="lgpd-actions">
+      <button type="button" class="btn btn-outline btn-sm" data-legal="lgpd">Ler Política</button>
+      <button type="button" class="btn btn-primary btn-sm" id="btnAceitarLgpd">Aceitar e Continuar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
